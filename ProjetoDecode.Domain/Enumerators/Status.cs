@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ProjetoDecode.Domain.Enumerators
+﻿namespace ProjetoDecode.Domain.Enumerators
 {
     public enum Status
     {

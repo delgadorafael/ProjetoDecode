@@ -1,12 +1,11 @@
 ﻿using ProjetoDecode.Domain.Enumerators;
+using ProjetoDecode.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
 
 namespace ProjetoDecode.Domain.Entities
 {
-    public class Person : Base
+    public class Person : Base, IEntity
     {
 
         public string FirstName { get; set; }

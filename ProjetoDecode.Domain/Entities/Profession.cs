@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ProjetoDecode.Domain.Interfaces;
 
 namespace ProjetoDecode.Domain.Entities
 {
-    public class Profession : Base
+    public class Profession : Base, IEntity
     {
         public string Role { get; set; }
     }

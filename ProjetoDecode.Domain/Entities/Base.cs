@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ProjetoDecode.Domain.Interfaces;
 
 namespace ProjetoDecode.Domain.Entities
 {
-    public class Base
+    public class Base : IEntity
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
     }
 }
