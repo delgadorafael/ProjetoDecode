@@ -1,7 +1,6 @@
 ﻿using ProjetoDecode.Domain.Enumerators;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ProjetoDecode.Application.DTO
 {

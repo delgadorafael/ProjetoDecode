@@ -4,7 +4,7 @@ using ProjetoDecode.Domain.Interfaces.Servicies;
 
 namespace ProjetoDecode.Domain.Servicies
 {
-    class ServiceProfession : ServiceBase<Profession>, IServiceProfession
+    public class ServiceProfession : ServiceBase<Profession>, IServiceProfession
     {
         private readonly IRepositoryProfession _repositoryProfession;
 

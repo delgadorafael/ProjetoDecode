@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ProjetoDecode.Application.Interfaces
 {
-    interface IApplicationServiceHobby
+    public interface IApplicationServiceHobby
     {
         void Add(HobbyDTO obj);
         void Update(HobbyDTO obj);

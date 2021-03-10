@@ -4,7 +4,7 @@ using ProjetoDecode.Domain.Interfaces.Servicies;
 
 namespace ProjetoDecode.Domain.Servicies
 {
-    class ServiceHobby : ServiceBase<Hobby>, IServiceHobby
+    public class ServiceHobby : ServiceBase<Hobby>, IServiceHobby
     {
         private readonly IRepositoryHobby _repositoryHobby;
 

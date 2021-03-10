@@ -2,7 +2,7 @@
 
 namespace ProjetoDecode.Domain.Interfaces.Servicies
 {
-    interface IServiceProfession : IServiceBase<Profession>
+    public interface IServiceProfession : IServiceBase<Profession>
     {
     }
 }

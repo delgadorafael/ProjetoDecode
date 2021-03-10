@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace ProjetoDecode.Application.Mapper
 {
-    class MapperHobby : IMapperHobby
+    public class MapperHobby : IMapperHobby
     {
         public Hobby MapperDTOEntity(HobbyDTO hobbyDTO)
         {

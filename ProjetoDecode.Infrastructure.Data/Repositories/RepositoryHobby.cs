@@ -4,7 +4,7 @@ using ProjetoDecode.Infrastructure.Data.Context;
 
 namespace ProjetoDecode.Infrastructure.Data.Repositories
 {
-    class RepositoryHobby : RepositoryBase<Hobby>, IRepositoryHobby
+    public class RepositoryHobby : RepositoryBase<Hobby>, IRepositoryHobby
     {
         private readonly DecodeContext _decodeContext;
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ProjetoDecode.Application.Interfaces
 {
-    interface IApplicationServicePerson
+    public interface IApplicationServicePerson
     {
         void Add(PersonDTO obj);
         void Update(PersonDTO obj);

@@ -2,7 +2,6 @@
 using ProjetoDecode.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Security.Authentication.ExtendedProtection;
 
 namespace ProjetoDecode.Domain.Entities
 {

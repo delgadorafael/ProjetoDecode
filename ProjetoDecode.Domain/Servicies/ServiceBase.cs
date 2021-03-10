@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ProjetoDecode.Domain.Servicies
 {
-    class ServiceBase<T> : IServiceBase<T> where T : class
+    public class ServiceBase<T> : IServiceBase<T> where T : class
     {
         private readonly IRepositoryBase<T> _repositoryBase;
 
