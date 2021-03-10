@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoDecode.Infrastructur
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{7AF5BC1E-07F8-4AC3-9D71-B695D422DBC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoDecode.API", "ProjetoDecode.API\ProjetoDecode.API.csproj", "{520FDA05-F841-44EF-A9B0-2D330E26313A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoDecode.API", "ProjetoDecode.API\ProjetoDecode.API.csproj", "{520FDA05-F841-44EF-A9B0-2D330E26313A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

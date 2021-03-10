@@ -5,7 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProjetoDecode.Application\ProjetoDecode.Application.csproj" />
+    <ProjectReference Include="..\ProjetoDecode.Infrastructure.Data\ProjetoDecode.Infrastructure.Data.csproj" />
   </ItemGroup>
 
 </Project>
