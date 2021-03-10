@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProjetoDecode.Application.DTO
 {
-    class PersonDTO
+    public class PersonDTO
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
