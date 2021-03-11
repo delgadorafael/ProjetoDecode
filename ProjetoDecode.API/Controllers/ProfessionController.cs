@@ -21,15 +21,28 @@ namespace ProjetoDecode.API.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return Ok(_applicationServiceProfession.GetAll());
+            try
+            {
+                return Ok(_applicationServiceProfession.GetAll());
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
         //GET api/value/1
         [HttpGet("{id}")]
         public ActionResult<IEnumerable<string>> Get(int id)
         {
-
-            return Ok(_applicationServiceProfession.GetById(id));
+            try
+            {
+                return Ok(_applicationServiceProfession.GetById(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
         //POST api/values
@@ -84,9 +97,7 @@ namespace ProjetoDecode.API.Controllers
             }
             catch (Exception e)
             {
-                //throw e;
                 return BadRequest(e.Message);
-                //return BadRequest("Error");
             }
         }
     }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjetoDecode.Infrastructure.Data.Context;
 
 namespace ProjetoDecode.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(DecodeContext))]
-    partial class DecodeContextModelSnapshot : ModelSnapshot
+    [Migration("20210311152445_PersonProfessionHobbiesMigrationAdjustment")]
+    partial class PersonProfessionHobbiesMigrationAdjustment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

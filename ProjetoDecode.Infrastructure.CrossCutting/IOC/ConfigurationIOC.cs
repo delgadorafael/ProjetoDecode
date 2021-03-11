@@ -16,14 +16,18 @@ namespace ProjetoDecode.Infrastructure.CrossCutting.IOC
             builder.RegisterType<ApplicationServicePerson>().As<IApplicationServicePerson>();
             builder.RegisterType<ApplicationServiceProfession>().As<IApplicationServiceProfession>();
             builder.RegisterType<ApplicationServiceHobby>().As<IApplicationServiceHobby>();
+            builder.RegisterType<ApplicationServicePeopleHobbies>().As<IApplicationServicePeopleHobbies>();
+
 
             builder.RegisterType<ServicePerson>().As<IServicePerson>();
             builder.RegisterType<ServiceProfession>().As<IServiceProfession>();
             builder.RegisterType<ServiceHobby>().As<IServiceHobby>();
+            builder.RegisterType<ServicePeopleHobbies>().As<IServicePeopleHobbies>();
 
             builder.RegisterType<RepositoryPerson>().As<IRepositoryPerson>();
             builder.RegisterType<RepositoryProfession>().As<IRepositoryProfession>();
             builder.RegisterType<RepositoryHobby>().As<IRepositoryHobby>();
+            builder.RegisterType<RepositoryPeopleHobbies>().As<IRepositoryPeopleHobbies>();
         }
     }
 }

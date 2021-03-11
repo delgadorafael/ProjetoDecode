@@ -22,7 +22,14 @@ namespace ProjetoDecode.API.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return Ok(_applicationServicePerson.GetAll());
+            try
+            {
+                return Ok(_applicationServicePerson.GetAll());
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
         //GET api/value/1
@@ -30,7 +37,14 @@ namespace ProjetoDecode.API.Controllers
         public ActionResult<IEnumerable<string>> Get(int id)
         
         {
-            return Ok(_applicationServicePerson.GetById(id));
+            try
+            {
+                return Ok(_applicationServicePerson.GetById(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
         //POST api/values
@@ -47,7 +61,7 @@ namespace ProjetoDecode.API.Controllers
             }
             catch (Exception e)
             {
-                throw e;
+                return BadRequest(e.Message);
             }
         }
 
@@ -65,7 +79,7 @@ namespace ProjetoDecode.API.Controllers
             }
             catch (Exception e)
             {
-                throw e;
+                return BadRequest(e.Message);
             }
         }
 
@@ -83,8 +97,27 @@ namespace ProjetoDecode.API.Controllers
             }
             catch (Exception e)
             {
-                throw e;
+                return BadRequest(e.Message);
             }
+        }
+
+        //----------------------------------------
+        [HttpPost("/hobbies")]
+        public ActionResult Post([FromBody] PeopleHobbiesDTO peopleHobbiesDTO)
+        {
+            return Ok();
+            //try
+            //{
+            //    if (personDTO == null)
+            //        return NotFound();
+
+            //    _applicationServicePerson.Add(personDTO);
+            //    return Ok("Person registered!");
+            //}
+            //catch (Exception e)
+            //{
+            //    return BadRequest(e.Message);
+            //}
         }
     }
 }

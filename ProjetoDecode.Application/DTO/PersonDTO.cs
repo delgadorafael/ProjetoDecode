@@ -12,7 +12,8 @@ namespace ProjetoDecode.Application.DTO
         public DateTime BirthDate { get; set; }
         public string Email { get; set; }
         public Status Status { get; set; }
-        public ProfessionDTO Profession { get; set; }
-        public IEnumerable<PeopleHobbiesDTO> PeopleHobbies { get; set; } = new List<PeopleHobbiesDTO>();
+        public int ProfessionId { get; set; }
+        //public ProfessionDTO Profession { get; set; }
+        //public IEnumerable<PeopleHobbiesDTO> PeopleHobbies { get; set; } = new List<PeopleHobbiesDTO>();
     }
 }
