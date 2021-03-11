@@ -14,8 +14,8 @@ namespace ProjetoDecode.Domain.Entities
         public string Email { get; set; }
         public DateTime RegisterDate { get; set; }
         public Status Status { get; set; }
-        public Profession Profession { get; set; }
-        public ICollection<PeopleHobbies> PeopleHobbies { get; set; } = new List<PeopleHobbies>();
+        public virtual Profession Profession { get; set; }
+        public virtual IEnumerable<PeopleHobbies> PeopleHobbies { get; set; } = new List<PeopleHobbies>();
 
 
     }

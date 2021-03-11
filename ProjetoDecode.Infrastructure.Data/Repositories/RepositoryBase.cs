@@ -57,7 +57,6 @@ namespace ProjetoDecode.Infrastructure.Data.Repositories
             try
             {
                 _decodeContext.Entry(obj).State = EntityState.Modified;
-                //_decodeContext.Set<T>().Update(obj);
                 _decodeContext.SaveChanges();
             }
             catch (Exception e)

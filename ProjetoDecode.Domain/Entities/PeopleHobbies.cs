@@ -4,7 +4,7 @@ namespace ProjetoDecode.Domain.Entities
 {
     public class PeopleHobbies : Base, IEntity
     {
-        public Person Person { get; set; }
-        public Hobby Hobbies { get; set; }
+        public int PersonId { get; set; }
+        public virtual Hobby Hobby { get; set; }
     }
 }

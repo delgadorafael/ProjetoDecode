@@ -24,10 +24,6 @@ namespace ProjetoDecode.Infrastructure.CrossCutting.IOC
             builder.RegisterType<RepositoryPerson>().As<IRepositoryPerson>();
             builder.RegisterType<RepositoryProfession>().As<IRepositoryProfession>();
             builder.RegisterType<RepositoryHobby>().As<IRepositoryHobby>();
-
-            builder.RegisterType<MapperPerson>().As<IMapperPerson>();
-            builder.RegisterType<MapperProfession>().As<IMapperProfession>();
-            builder.RegisterType<MapperHobby>().As<IMapperHobby>();
         }
     }
 }

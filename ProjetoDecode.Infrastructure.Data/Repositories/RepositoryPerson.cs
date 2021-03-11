@@ -1,6 +1,7 @@
 ﻿using ProjetoDecode.Domain.Entities;
 using ProjetoDecode.Domain.Interfaces.Repositories;
 using ProjetoDecode.Infrastructure.Data.Context;
+using System.Collections.Generic;
 
 namespace ProjetoDecode.Infrastructure.Data.Repositories
 {

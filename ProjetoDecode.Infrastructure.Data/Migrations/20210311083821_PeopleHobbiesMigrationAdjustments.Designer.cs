@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjetoDecode.Infrastructure.Data.Context;
 
 namespace ProjetoDecode.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(DecodeContext))]
-    partial class DecodeContextModelSnapshot : ModelSnapshot
+    [Migration("20210311083821_PeopleHobbiesMigrationAdjustments")]
+    partial class PeopleHobbiesMigrationAdjustments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,7 +46,7 @@ namespace ProjetoDecode.Infrastructure.Data.Migrations
                     b.Property<int?>("HobbyId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PersonId")
+                    b.Property<int?>("PersonId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -109,16 +111,16 @@ namespace ProjetoDecode.Infrastructure.Data.Migrations
             modelBuilder.Entity("ProjetoDecode.Domain.Entities.PeopleHobbies", b =>
                 {
                     b.HasOne("ProjetoDecode.Domain.Entities.Hobby", "Hobby")
-                        .WithMany()
+                        .WithMany("PeopleHobbies")
                         .HasForeignKey("HobbyId");
 
-                    b.HasOne("ProjetoDecode.Domain.Entities.Person", null)
+                    b.HasOne("ProjetoDecode.Domain.Entities.Person", "Person")
                         .WithMany("PeopleHobbies")
-                        .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PersonId");
 
                     b.Navigation("Hobby");
+
+                    b.Navigation("Person");
                 });
 
             modelBuilder.Entity("ProjetoDecode.Domain.Entities.Person", b =>
@@ -128,6 +130,11 @@ namespace ProjetoDecode.Infrastructure.Data.Migrations
                         .HasForeignKey("ProfessionId");
 
                     b.Navigation("Profession");
+                });
+
+            modelBuilder.Entity("ProjetoDecode.Domain.Entities.Hobby", b =>
+                {
+                    b.Navigation("PeopleHobbies");
                 });
 
             modelBuilder.Entity("ProjetoDecode.Domain.Entities.Person", b =>

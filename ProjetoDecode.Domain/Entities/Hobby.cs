@@ -6,6 +6,6 @@ namespace ProjetoDecode.Domain.Entities
     public class Hobby : Base, IEntity
     {
         public string Name { get; set; }
-        public ICollection<PeopleHobbies> PeopleHobbies { get; set; } = new List<PeopleHobbies>();
+        //public virtual IEnumerable<PeopleHobbies> PeopleHobbies { get; set; } = new List<PeopleHobbies>();
     }
 }

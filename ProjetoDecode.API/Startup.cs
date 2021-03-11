@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using ProjetoDecode.Infrastructure.CrossCutting.IOC;
 using ProjetoDecode.Infrastructure.Data.Context;
+using ProjetoDecode.Application.Mapper.Configurations;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ProjetoDecode.API
@@ -24,17 +25,15 @@ namespace ProjetoDecode.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DecodeContext>(options =>
-               options.UseSqlServer(Configuration.GetConnectionString("DecodeContext")));
-
+            //services.AddDbContext<DecodeContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DecodeContext")));
+            services.AddDbContext<DecodeContext>(options => options.UseLazyLoadingProxies().UseSqlServer(Configuration.GetConnectionString("DecodeContext")));
+            services.AddAutoMapper(typeof(AutoMapperConfigurations));
             services.AddControllers();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddSwaggerGen(x =>
             {
                 x.SwaggerDoc("v1", new OpenApiInfo { Title = "API Decode", Version = "v1" });
             });
-
-           
         }
 
         public void ConfigureContainer(ContainerBuilder builder)

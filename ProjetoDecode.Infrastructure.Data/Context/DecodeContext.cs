@@ -15,7 +15,7 @@ namespace ProjetoDecode.Infrastructure.Data.Context
 
         public DecodeContext(DbContextOptions<DecodeContext> options) : base(options)
         {
-
+            //this.Configuration.LazyLoadingEnabled = false;
         }
 
         public DbSet<Person> People { get; set; }
@@ -46,13 +46,21 @@ namespace ProjetoDecode.Infrastructure.Data.Context
             return base.SaveChanges();
         }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
+        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
 
-        //    modelBuilder.ApplyConfiguration(new PersonConfiguration());
+            //Establishes a one - to - one relationship between Person and Profession
+            //modelBuilder.Entity<Person>()
+            //                .HasOne(x => x.Profession)
+            //                .WithOne(x => x.Person)
+            //                .HasForeignKey<Profession>(x => x.PersonId);
 
-        //    //modelBuilder.Entity<Person>(new PersonConfiguration().Configure);
-        //}
+            //modelBuilder.Entity<Profession>()
+            //                .HasOne(x => x.Person)
+            //                .WithOne(x => x.Profession)
+            //                .HasForeignKey<Profession>(x => x.Id);
+        }
     }
 }

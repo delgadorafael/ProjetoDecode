@@ -13,6 +13,6 @@ namespace ProjetoDecode.Application.DTO
         public string Email { get; set; }
         public Status Status { get; set; }
         public ProfessionDTO Profession { get; set; }
-        public List<HobbyDTO> Hobbies { get; set; }
+        public IEnumerable<PeopleHobbiesDTO> PeopleHobbies { get; set; } = new List<PeopleHobbiesDTO>();
     }
 }
