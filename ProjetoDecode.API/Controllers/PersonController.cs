@@ -3,6 +3,7 @@ using ProjetoDecode.Application.DTO;
 using ProjetoDecode.Application.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjetoDecode.API.Controllers
 {
@@ -40,6 +41,26 @@ namespace ProjetoDecode.API.Controllers
             try
             {
                 return Ok(_applicationServicePerson.GetById(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        //GET api/value/lastname
+        [HttpGet("search/{search}")]
+        public ActionResult<IEnumerable<string>> Search(string search)
+        {
+            try
+            {
+                var _search = _applicationServicePerson.GetAll().Where( x =>
+                                                                        x.FirstName.ToLower().Contains(search.ToLower()) ||
+                                                                        x.LastName.ToLower().Contains(search.ToLower())
+                                                                        //x.FirstName.ToLower() == search.ToLower() || 
+                                                                        //x.LastName.ToLower() == search.ToLower()
+                                                                        );
+                return Ok(_search);
             }
             catch (Exception e)
             {
